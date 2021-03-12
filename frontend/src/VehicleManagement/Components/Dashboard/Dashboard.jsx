@@ -57,6 +57,12 @@ const useModalStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
+  formControl: {
+    // margin: theme.spacing(1),
+    minWidth: 180,
+    background: "gainsboro",
+    // height: 40,
+  },
 }));
 
 function getModalStyle() {
@@ -140,44 +146,59 @@ export const Dashboard = (props) => {
       <h3>Loading...</h3>
     ) : (
       <>
-        <Button variant="contained" size="small" onClick={handleSort}>
-          Sort By Capacity
-        </Button>
-        <br />
-        <br />
-        <TextField
-          value={query}
-          size="small"
-          onChange={(e) => setQuery(e.target.value)}
-          label="Enter Vehicle Reg no"
-          variant="outlined"
-        />
-
-        {/* <Button
-          variant="contained"
-          size="small"
-          onClick={handleSearch}
-          // color="primary"
+        <div
+          style={{
+            background: "#957DAD",
+            height: "70px",
+            // padding: "10px",
+          }}
         >
-          Search Vehicle
-        </Button> */}
-        <br />
-        <br />
-        <FormControl>
-          <InputLabel> Type</InputLabel>
-          <Select value={type} onChange={(e) => setType(e.target.value)}>
-            <MenuItem value={10}>Car</MenuItem>
-            <MenuItem value={20}>Van</MenuItem>
-            <MenuItem value={30}>Bus</MenuItem>
-          </Select>
-        </FormControl>
+          <div
+            style={{
+              padding: "16px",
+              display: "flex",
+              justifyContent: "space-around",
+            }}
+          >
+            <div>
+              <Button variant="contained" size="small" onClick={handleSort}>
+                Sort By Capacity
+              </Button>
+            </div>
 
-        <br />
-        <br />
-        <Button variant="contained" size="small" onClick={handleClear}>
-          Clear filters
-        </Button>
-        <br />
+            <div>
+              <FormControl
+                variant="outlined"
+                className={modalClasses.formControl}
+                size="small"
+              >
+                <InputLabel>Filter by Type</InputLabel>
+                <Select value={type} onChange={(e) => setType(e.target.value)}>
+                  <MenuItem value={10}>Car</MenuItem>
+                  <MenuItem value={20}>Van</MenuItem>
+                  <MenuItem value={30}>Bus</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+
+            <div>
+              <TextField
+                value={query}
+                size="small"
+                onChange={(e) => setQuery(e.target.value)}
+                label="Enter Vehicle Reg no"
+                variant="outlined"
+                style={{ background: "gainsboro" }}
+              />
+            </div>
+            <div>
+              <Button variant="contained" size="small" onClick={handleClear}>
+                Clear all filters
+              </Button>
+            </div>
+          </div>
+        </div>
+
         <br />
         <button onClick={() => setPage((page) => page - 1)} disabled={page < 2}>
           Prev
@@ -191,9 +212,7 @@ export const Dashboard = (props) => {
                 <StyledTableCell>Image</StyledTableCell>
                 <StyledTableCell>Vehicle</StyledTableCell>
                 <StyledTableCell align="right">No of Trips</StyledTableCell>
-                <StyledTableCell align="right">
-                  Type&nbsp;(Car/Van/Bus)
-                </StyledTableCell>
+                <StyledTableCell align="right">Type</StyledTableCell>
                 <StyledTableCell align="right">Regn no.</StyledTableCell>
                 <StyledTableCell align="right">Capacity</StyledTableCell>
                 <StyledTableCell align="right">Edit</StyledTableCell>
