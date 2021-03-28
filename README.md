@@ -24,7 +24,7 @@ npm run start
 ![Login](https://user-images.githubusercontent.com/68864566/109428182-df0fea80-7a1b-11eb-9375-1a5a75be7751.png)
 
 # Dashboard with sorting, filter, search options along with pagination
-![Dashboard](https://user-images.githubusercontent.com/68864566/109428381-f4d1df80-7a1c-11eb-8985-0db72c36ef62.png)
+![Dashboard2](https://user-images.githubusercontent.com/68864566/110998595-1039d480-83a5-11eb-851c-c4af19953b87.png)
 
 # Vehicle Details with edit and delete functionalities
 ![Dashboard1](https://user-images.githubusercontent.com/68864566/109428547-7aee2600-7a1d-11eb-8a42-101d4b66a73a.png)
