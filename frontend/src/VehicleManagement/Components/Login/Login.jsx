@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { loginOperatorData } from "./LoginRedux/action";
+import { loginOperatorData } from "./AuthRedux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import { Button, TextField } from "@material-ui/core";
-import { loadData, saveData } from "../../Redux/localStorage";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -16,8 +15,6 @@ export const Login = () => {
 
   const handleLogin = () => {
     dispatch(loginOperatorData({ email, password }));
-    // !isError && saveData("isAuth", isAuth);
-    // !isLoading && isAuth && history.push("/vehicles");
   };
 
   console.log(isAuth);

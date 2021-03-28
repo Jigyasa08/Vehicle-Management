@@ -2,10 +2,10 @@ import { applyMiddleware, createStore, combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import { vehicleDataReducer } from "../Components/Dashboard/DashboardRedux/reducer";
-import { loginReducer } from "../Components/Login/LoginRedux/reducer";
+import { authReducer } from "../Components/Login/AuthRedux/reducer";
 
 const rootReducer = combineReducers({
-  auth: loginReducer,
+  auth: authReducer,
   vehicleData: vehicleDataReducer,
 });
 

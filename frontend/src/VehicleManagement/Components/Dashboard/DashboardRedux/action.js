@@ -31,13 +31,11 @@ export const vehicleDataGetFailure = (payload) => {
 export const getVehicleData = (page, limit) => (dispatch) => {
   console.log(page, limit);
   dispatch(vehicleDataGetRequest());
-  const config = {
+
+  axios({
     method: "GET",
     url: `http://localhost:5000/api/vehicles?page=${page}&limit=${limit}`,
-    //   headers: { "Content-Type": "application/json" },
-  };
-
-  axios(config)
+  })
     .then((res) => {
       dispatch(vehicleDataGetSuccess(res.data.current));
     })
