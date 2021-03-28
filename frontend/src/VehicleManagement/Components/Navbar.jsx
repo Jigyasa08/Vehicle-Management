@@ -12,8 +12,6 @@ export const Navbar = () => {
   console.log("Navbar", isAuth);
   const handleLogout = () => {
     dispatch(logoutOperatorData());
-    // history.push("/");
-    // window.location.reload(false);
   };
   return (
     <div>
